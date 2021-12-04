@@ -86,7 +86,7 @@ public class Game {
 	}
 
 	public void $(String msg){
-		SurvivalGames.$(msg);
+		SurvivalGames.log(msg);
 	}
 
 	public void debug(String msg){
@@ -705,14 +705,14 @@ public class Game {
 			LobbyManager.getInstance().updateWall(gameID);
 			
 		}catch (Exception e){
-			SurvivalGames.$("???????????????????????");
+			SurvivalGames.log("???????????????????????");
 			e.printStackTrace();
-			SurvivalGames.$("ID"+gameID);
-			SurvivalGames.$(left+"");
-			SurvivalGames.$(activePlayers.size()+"");
-			SurvivalGames.$(activePlayers.toString());
-			SurvivalGames.$(p.getName());
-			SurvivalGames.$(p.getLastDamageCause().getCause().name());
+			SurvivalGames.log("ID"+gameID);
+			SurvivalGames.log(left+"");
+			SurvivalGames.log(activePlayers.size()+"");
+			SurvivalGames.log(activePlayers.toString());
+			SurvivalGames.log(p.getName());
+			SurvivalGames.log(p.getLastDamageCause().getCause().name());
 		}
 	}
 
@@ -794,7 +794,7 @@ public class Game {
 				Player p = activePlayers.get(a);
 				msgmgr.sendMessage(PrefixType.WARNING, "Game disabled!", p);
 				removePlayer(p, false);
-			} catch (Exception e) {}
+			} catch (IndexOutOfBoundsException e) {}
 
 		}
 

@@ -27,9 +27,9 @@ import com.sk89q.worldedit.bukkit.BukkitPlayer;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
 import com.sk89q.worldedit.regions.Region;
 
-public class GameManager {
+public final class GameManager {
 
-	static GameManager instance = new GameManager();
+	final static GameManager instance = new GameManager();
 	private ArrayList < Game > games = new ArrayList < Game > ();
 	private SurvivalGames p;
 	public static HashMap < Integer, HashMap < Block, ItemStack[] >> openedChest = new HashMap < Integer, HashMap < Block, ItemStack[] >> ();
@@ -84,7 +84,7 @@ public class GameManager {
 				if (c.getBoolean("sg-system.arenas." + a + ".enabled")) {
 					//SurvivalGames.$(c.getString("sg-system.arenas."+a+".enabled"));
 					//c.set("sg-system.arenas."+a+".vip",c.getBoolean("sg-system.arenas."+a+".vip", false));
-					SurvivalGames.$("Loading Arena: " + a);
+					SurvivalGames.log("Loading Arena: " + a);
 					loaded++;
 					games.add(new Game(a));
 					StatsManager.getInstance().addArena(a);

@@ -63,13 +63,13 @@ public class UpdateChecker {
                 player.sendMessage(ChatColor.DARK_AQUA    + in[2]);
                 player.sendMessage(ChatColor.AQUA+"" + ChatColor.UNDERLINE + in[3]);
                 player.sendMessage(ChatColor.DARK_BLUE + "--------------------------------------");
-                SurvivalGames.$("[Updates found!");
+                SurvivalGames.log("[Updates found!");
 
             } else {
-            	SurvivalGames.$("[SG][Info] No updates found!");
+            	SurvivalGames.log("[SG][Info] No updates found!");
             }   
         } catch(Exception e) {
-        	SurvivalGames.$(Level.WARNING, "[SurvivalGames] Could not check for updates.");
+        	SurvivalGames.log(Level.WARNING, "[SurvivalGames] Could not check for updates.");
         }
     }
 }

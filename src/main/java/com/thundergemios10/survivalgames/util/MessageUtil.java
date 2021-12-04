@@ -24,14 +24,14 @@ public class MessageUtil {
 			try{
 				msg.replace("{$"+s+"}", vars.get(s));
 			}catch(Exception e){
-				SurvivalGames.$(Level.WARNING, "Failed to replace string vars. Error on "+s);
+				SurvivalGames.log(Level.WARNING, "Failed to replace string vars. Error on "+s);
 				error = true;
 			}
 		}
 		if(error){
-			SurvivalGames.$(Level.SEVERE, "Error replacing vars in message: "+msg);
-			SurvivalGames.$(Level.SEVERE, "Vars: "+vars.toString());
-			SurvivalGames.$(Level.SEVERE, "Vars Cache: "+varcache.toString());
+			SurvivalGames.log(Level.SEVERE, "Error replacing vars in message: "+msg);
+			SurvivalGames.log(Level.SEVERE, "Vars: "+vars.toString());
+			SurvivalGames.log(Level.SEVERE, "Vars Cache: "+varcache.toString());
 		}
 		return msg;
 	}
@@ -46,14 +46,14 @@ public class MessageUtil {
 			try{
 				msg = msg.replace("{$"+str+"}", varcache.get(str));
 			}catch(Exception e){
-				SurvivalGames.$(Level.WARNING,"Failed to replace string vars. Error on "+str);
+				SurvivalGames.log(Level.WARNING,"Failed to replace string vars. Error on "+str);
 				error = true;
 			}
 		}
 		if(error){
-			SurvivalGames.$(Level.SEVERE, "Error replacing vars in message: "+msg);
-			SurvivalGames.$(Level.SEVERE, "Vars: "+Arrays.toString(vars));
-			SurvivalGames.$(Level.SEVERE, "Vars Cache: "+varcache.toString());
+			SurvivalGames.log(Level.SEVERE, "Error replacing vars in message: "+msg);
+			SurvivalGames.log(Level.SEVERE, "Vars: "+Arrays.toString(vars));
+			SurvivalGames.log(Level.SEVERE, "Vars Cache: "+varcache.toString());
 		}
 
 		return msg;

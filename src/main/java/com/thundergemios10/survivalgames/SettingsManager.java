@@ -144,7 +144,7 @@ public class SettingsManager {
 	}
 	
 	public boolean moveFile(File ff){
-		SurvivalGames.$("Moving outdated config file. "+f.getName());
+		SurvivalGames.log("Moving outdated config file. "+f.getName());
 		String name = ff.getName();
 		File ff2 = new File(SurvivalGames.getPluginDataFolder(), getNextName(name, 0));
 		return ff.renameTo(ff2);

@@ -22,13 +22,13 @@ public class CommandHandler implements CommandExecutor {
 	private Plugin plugin;
 	private HashMap < String, SubCommand > commands;
 	private HashMap < String, Integer > helpinfo;
-	private HashMap<String, ConsoleSubCommand> nonPlayerOnlyCmds = new HashMap<String, ConsoleSubCommand>(); 
+	private HashMap<String, ConsoleSubCommand> nonPlayerOnlyCmds = new HashMap<String, ConsoleSubCommand>();
 	private MessageManager msgmgr = MessageManager.getInstance();
 	public List<String> tabCompletionList = new ArrayList<String>();
 	public CommandHandler(Plugin plugin) {
 		setInstance(this);
 		this.plugin = plugin;
-		commands = new HashMap < String, SubCommand > ();
+		commands = new HashMap<>();
 		helpinfo = new HashMap < String, Integer > ();
 		loadCommands();
 		loadHelpInfo();
@@ -121,7 +121,7 @@ public class CommandHandler implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd1, String commandLabel, String[] args) {
 		PluginDescriptionFile pdfFile = plugin.getDescription();
 
-		if (SurvivalGames.config_todate == false) {
+		if (!SurvivalGames.config_todate) {
 			msgmgr.sendMessage(PrefixType.WARNING, "The config file is out of date. Please tell an administrator to reset the config.", sender);
 			return true;
 		}

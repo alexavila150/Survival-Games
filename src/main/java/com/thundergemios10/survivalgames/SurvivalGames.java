@@ -169,29 +169,29 @@ public class SurvivalGames extends JavaPlugin {
 		}
 	}
 
-	public static void $(String msg){
+	public static void log(String msg){
 		logger.log(Level.INFO, msg);
 	}
 
-	public static void $(Level l, String msg){
+	public static void log(Level l, String msg){
 		logger.log(l, msg);
 	}
 
 	public static void debug(String msg){
 		if(SettingsManager.getInstance().getConfig().getBoolean("debug", false))
-			$("[Debug] "+msg);
+			log("[Debug] "+msg);
 	}
 
 	public static void info(String msg){
-		$(Level.INFO,msg);
+		log(Level.INFO,msg);
 	}
 	
 	public static void warning(String msg){
-		$(Level.WARNING,"[Warning] "+msg);
+		log(Level.WARNING,"[Warning] "+msg);
 	}
 	
 	public static void error(String msg){
-		$(Level.SEVERE,"[Error] "+msg);
+		log(Level.SEVERE,"[Error] "+msg);
 	}
 	
 	public static void debug(int a) {
